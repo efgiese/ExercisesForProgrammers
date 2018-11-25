@@ -1,4 +1,4 @@
-# 1. Counting the Number of Characters
+# 2. Counting the Number of Characters
 
 Create an applicaton that prompts for an input string and prints the input string and the number of characters the string contains.
 
