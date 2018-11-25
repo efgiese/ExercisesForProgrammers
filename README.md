@@ -1,3 +1,3 @@
 # Exercises for Programmers
 
-This is started with .NET Core on Linux and Visual Studio Code creating a console application.
+This has started with [.NET Core](https://www.microsoft.com/net/download) on Debian Linux and [Visual Studio Code](https://code.visualstudio.com/) creating a console application.
