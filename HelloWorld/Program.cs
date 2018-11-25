@@ -7,9 +7,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("What is your name?");
-            string input = Console.ReadLine();
-            string output = "Hello, " + input + ", nice to meet you!";
-            Console.WriteLine(output);
+            Console.WriteLine("Hello, {0}, nice to meet you!", Console.ReadLine());
         }
     }
 }
