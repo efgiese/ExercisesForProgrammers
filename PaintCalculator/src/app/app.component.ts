@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PaintCalculator';
+  title = 'Paint Calculator';
+  aLenght: number;
+  aWidth: number;
+
+  onSubmit() {}
 }
