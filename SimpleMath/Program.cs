@@ -32,8 +32,8 @@ namespace SimpleMath
         }
         static void Main(string[] args)
         {
-            int first = ReadInt("What is the first number?", 0, 100);
-            int second = ReadInt("What is the second number?", 0, 100);
+            int first = ReadInt("What is the first number?", 1, 100);
+            int second = ReadInt("What is the second number?", 1, 100);
             Console.WriteLine($"{first} + {second} = {first + second}");
             Console.WriteLine($"{first} - {second} = {first - second}");
             Console.WriteLine($"{first} * {second} = {first * second}");
