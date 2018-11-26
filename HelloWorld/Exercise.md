@@ -15,11 +15,11 @@ Change the Code to prompt for the users name and prints a greeting using this in
     What is your name? John Doe
     Hello, John Doe, nice to meet you!
 
-## Constraint
+## Constraints
 
 * Use variables for input, string concatenation and output.
 
-## Challanges
+## Challenges
 
 1. Change the Code without using any variables.
 2. Try to prevent empty input.
