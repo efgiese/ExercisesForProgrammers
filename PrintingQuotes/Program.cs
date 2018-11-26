@@ -5,6 +5,10 @@ namespace PrintingQuotes
     struct Quote {
         public string author;
         public string quote;
+        public void PrintQuote()
+        {
+            Console.WriteLine(author + " says, " + "\"" + quote + "\"");
+        }
     }
     class Program
     {
@@ -22,7 +26,7 @@ namespace PrintingQuotes
             quotes[2].author = "Mark Twain";
             quotes[2].quote = "It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt.";
 
-            Console.WriteLine(quotes[index].author + " says, " + "\"" + quotes[index].quote + "\"");
+            quotes[index].PrintQuote();
         }
     }
 }
