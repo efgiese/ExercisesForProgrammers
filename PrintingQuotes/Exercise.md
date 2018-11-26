@@ -17,3 +17,4 @@ Create a program that prompts for a quote and an author. Display the quotation a
 ## Challanges
 
 1. Create a structure that holds quotes and author. Show random quotes, every time the program starts.
+2. Use a class.
