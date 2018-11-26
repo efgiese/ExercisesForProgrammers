@@ -2,24 +2,27 @@
 
 namespace PrintingQuotes
 {
+    struct Quote {
+        public string author;
+        public string quote;
+    }
     class Program
     {
-        static string ReadInput(string prompt)
-        {
-            string result = "";
-            do
-            {
-                Console.WriteLine(prompt);
-                result = Console.ReadLine();
-            } while (result == "");
-
-            return result;
-        }
         static void Main(string[] args)
         {
-            string quote = ReadInput("What is the quote?");
-            string author = ReadInput("Who said it?");
-            Console.WriteLine(author + " says, " + "\"" + quote + "\"");
+            Random rnd = new Random();
+            int index = rnd.Next(3);
+
+            Quote[] qoutes = new Quote[3];
+
+            qoutes[0].author = "Mark Twain";
+            qoutes[0].quote = "The secret fo getting ahead is getting started.";
+            qoutes[1].author = "Mark Twain";
+            qoutes[1].quote = "Do the right thing. It will gratify some people and astonish the rest.";
+            qoutes[2].author = "Mark Twain";
+            qoutes[2].quote = "It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt.";
+
+            Console.WriteLine(qoutes[index].author + " says, " + "\"" + qoutes[index].quote + "\"");
         }
     }
 }
