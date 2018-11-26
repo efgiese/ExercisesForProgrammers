@@ -13,16 +13,16 @@ namespace PrintingQuotes
             Random rnd = new Random();
             int index = rnd.Next(3);
 
-            Quote[] qoutes = new Quote[3];
+            Quote[] quotes = new Quote[3];
 
-            qoutes[0].author = "Mark Twain";
-            qoutes[0].quote = "The secret fo getting ahead is getting started.";
-            qoutes[1].author = "Mark Twain";
-            qoutes[1].quote = "Do the right thing. It will gratify some people and astonish the rest.";
-            qoutes[2].author = "Mark Twain";
-            qoutes[2].quote = "It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt.";
+            quotes[0].author = "Mark Twain";
+            quotes[0].quote = "The secret fo getting ahead is getting started.";
+            quotes[1].author = "Mark Twain";
+            quotes[1].quote = "Do the right thing. It will gratify some people and astonish the rest.";
+            quotes[2].author = "Mark Twain";
+            quotes[2].quote = "It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt.";
 
-            Console.WriteLine(qoutes[index].author + " says, " + "\"" + qoutes[index].quote + "\"");
+            Console.WriteLine(quotes[index].author + " says, " + "\"" + quotes[index].quote + "\"");
         }
     }
 }
