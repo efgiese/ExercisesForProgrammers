@@ -6,10 +6,7 @@ export class Ceiling {
     return 0;
   }
   get liter() {
-    if (this.squareMeter % this.squareMeterPerLiter > 0) {
-      return Math.round(this.squareMeter / this.squareMeterPerLiter + 1);
-    }
-    return this.squareMeter / this.squareMeterPerLiter;
+    return Math.ceil(this.squareMeter / this.squareMeterPerLiter);
   }
 }
 
@@ -19,7 +16,7 @@ export class SquareCeiling extends Ceiling {
   }
 
   get squareMeter() {
-    return this.length * this.width;
+    return Math.round(this.length * this.width * 100) / 100;
   }
 }
 
@@ -29,16 +26,25 @@ export class RoundCeiling extends Ceiling {
   }
 
   get squareMeter() {
-    return this.diameter * 3.14;
+    return Math.round(this.diameter * 3.14 * 100) / 100;
   }
 }
 
 export class LshapeCeiling extends Ceiling {
-  constructor(private aLength: number, private aWidth: number, private bLength: number, private bWidth: number) {
+  constructor(
+    private aLength: number,
+    private aWidth: number,
+    private bLength: number,
+    private bWidth: number
+  ) {
     super();
   }
 
   get squareMeter() {
-    return (this.aLength * this.aWidth) - (this.bLength * this.bWidth);
+    return (
+      Math.round(
+        (this.aLength * this.aWidth - this.bLength * this.bWidth) * 100
+      ) / 100
+    );
   }
 }
