@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SquareCeiling } from './shared/ceiling';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Paint Calculator';
+  submitted = false;
   aLenght: number;
   aWidth: number;
+  squareMeter: number;
+  liter: number;
+  ceiling: SquareCeiling;
 
-  onSubmit() {}
+  onSubmit() {
+    this.submitted = true;
+    this.ceiling = new SquareCeiling(this.aLenght, this.aWidth);
+    this.squareMeter = this.ceiling.squareMeter;
+    this.liter = this.ceiling.liter;
+  }
 }

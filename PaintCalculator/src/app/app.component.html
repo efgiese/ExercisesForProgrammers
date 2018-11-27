@@ -4,7 +4,7 @@
   <div class="container" style="text-align:left">
     <form (ngSubmit)="onSubmit()" #squareForm="ngForm">
       <div class="form-group">
-        <label for="length">Length</label>
+        <label for="length">Length in meter</label>
         <input
           type="number"
           class="form-control"
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="width">Width</label>
+        <label for="width">Width in meter</label>
         <input
           type="number"
           class="form-control"
@@ -32,10 +32,29 @@
           name="width"
           #width="ngModel"
         />
-        <div [hidden]="width.valid || width.pristine" class="alert alert-danger">
+        <div
+          [hidden]="width.valid || width.pristine"
+          class="alert alert-danger"
+        >
           Width is required
         </div>
       </div>
+
+      <button
+        [disabled]="!squareForm.valid"
+        type="submit"
+        class="btn btn-success"
+      >
+        Submit
+      </button>
     </form>
+
+    <hr />
+    <div [hidden]="!submitted">
+      <label for="result"
+        >You will need to purchase {{ liter }} liter of paint to cover
+        {{ squareMeter }} square meter.</label
+      >
+    </div>
   </div>
 </div>

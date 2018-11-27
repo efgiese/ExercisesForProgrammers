@@ -1,14 +1,14 @@
 # 9. Paint Calculator
 
-Calculate gallons of paint needed to paint the ceiling of a room. Prompt for the length and width, and assume one gallon covers 350 square feet. Display the number of gallons needed to paint the ceiling as a whole number.
+Calculate liter of paint needed to paint the ceiling of a room. Prompt for the length and width, and assume one liter covers 8 square meter. Display the number of liter needed to paint the ceiling as a whole number.
 
 ## Example Output
 
-    You will need to purchase 2 gallons of
-    paint to cover 360 square feet.
+    You will need to purchase 10 liter of
+    paint to cover 80 square meter.
 
-Remember, you can’t buy a partial gallon of paint. You must
-round up to the next whole gallon.
+Remember, you can’t buy a partial liter of paint. You must
+round up to the next whole liter.
 
 ## Constraints
 
