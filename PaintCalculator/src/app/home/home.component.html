@@ -1,0 +1,179 @@
+<div class="container" style="text-align:left">
+  <div class="form-group">
+    <label for="roomType">Room Type</label>
+    <select
+      class="form-control"
+      id="roomType"
+      name="roomType"
+      required
+      [(ngModel)]="roomType"
+      #roomTypeModel="ngModel"
+      (change)="onChangeSelect()"
+    >
+      <option *ngFor="let room of roomTypes" [value]="room">{{ room }}</option>
+    </select>
+  </div>
+
+  <!-- Square Room -->
+  <form (ngSubmit)="onSubmit()" #squareForm="ngForm" [hidden]="index !== 0">
+    <div class="form-group">
+      <label for="length">Length in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="length"
+        required
+        [(ngModel)]="aLenght"
+        name="length"
+        #length="ngModel"
+      />
+      <div
+        [hidden]="length.valid || length.pristine"
+        class="alert alert-danger"
+      >
+        Lenght is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="width">Width in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="width"
+        required
+        [(ngModel)]="aWidth"
+        name="width"
+        #width="ngModel"
+      />
+      <div [hidden]="width.valid || width.pristine" class="alert alert-danger">
+        Width is required
+      </div>
+    </div>
+
+    <button
+      [disabled]="!squareForm.valid"
+      type="submit"
+      class="btn btn-success"
+    >
+      Submit
+    </button>
+  </form>
+
+  <!-- Round Room -->
+  <form (ngSubmit)="onSubmit()" #roundForm="ngForm" [hidden]="index !== 1">
+    <div class="form-group">
+      <label for="diameter">Diameter in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="diameter"
+        required
+        [(ngModel)]="aDiameter"
+        name="diameter"
+        #diameter="ngModel"
+      />
+      <div
+        [hidden]="diameter.valid || diameter.pristine"
+        class="alert alert-danger"
+      >
+        Diameter is required
+      </div>
+    </div>
+
+    <button [disabled]="!roundForm.valid" type="submit" class="btn btn-success">
+      Submit
+    </button>
+  </form>
+
+  <!-- Lshape Room -->
+  <form (ngSubmit)="onSubmit()" #lShapeForm="ngForm" [hidden]="index !== 2">
+    <div class="form-group">
+      <label for="llength">Long length in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="llength"
+        required
+        [(ngModel)]="aLenght"
+        name="llength"
+        #llength="ngModel"
+      />
+      <div
+        [hidden]="llength.valid || llength.pristine"
+        class="alert alert-danger"
+      >
+        Lenght is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lwidth">Long width in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="lwidth"
+        required
+        [(ngModel)]="aWidth"
+        name="lwidth"
+        #lwidth="ngModel"
+      />
+      <div
+        [hidden]="lwidth.valid || lwidth.pristine"
+        class="alert alert-danger"
+      >
+        Width is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="slength">Short length in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="slength"
+        required
+        [(ngModel)]="bLenght"
+        name="slength"
+        #slength="ngModel"
+      />
+      <div
+        [hidden]="slength.valid || slength.pristine"
+        class="alert alert-danger"
+      >
+        Lenght is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="swidth">Short width in meter</label>
+      <input
+        type="number"
+        class="form-control"
+        id="swidth"
+        required
+        [(ngModel)]="bWidth"
+        name="swidth"
+        #swidth="ngModel"
+      />
+      <div
+        [hidden]="swidth.valid || swidth.pristine"
+        class="alert alert-danger"
+      >
+        Width is required
+      </div>
+    </div>
+
+    <button
+      [disabled]="!lShapeForm.valid"
+      type="submit"
+      class="btn btn-success"
+    >
+      Submit
+    </button>
+  </form>
+
+  <hr />
+  <div [hidden]="!submitted">
+    <label for="result"
+      >You will need to purchase {{ liter }} liter of paint to cover
+      {{ squareMeter }} square meter.</label
+    >
+  </div>
+</div>
