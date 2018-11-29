@@ -1,5 +1,7 @@
 # PaintCalculator
 
+This has started as plain Angular project. I would add nativescript-schematics to build both web and mobile apps from a single project.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 ## Development server
