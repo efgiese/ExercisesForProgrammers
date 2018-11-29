@@ -4,4 +4,6 @@ This has started with [.NET Core](https://www.microsoft.com/net/download) on Deb
 
 For the GUI challanges i used the [MonoDevelop](https://www.monodevelop.com/) Gtk GUI designer.
 
+For Mobile i used [Angular](https://angular.io/) and [NativeScript](https://www.nativescript.org/).
+
 Examples taken from [Exercises for Programmers, Brian P. Hogan](https://www.amazon.de/Exercises-Programmers-Challenges-Develop-Coding/dp/1680501224/ref=sr_1_1/258-2226075-9455761?ie=UTF8&qid=1543253056&sr=8-1&keywords=exercises+for+programmers). Please buy it for additional infos.
