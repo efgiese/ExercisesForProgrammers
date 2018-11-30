@@ -4,18 +4,18 @@
     <select
       class="form-control"
       id="roomType"
-      name="roomType"
       required
-      [(ngModel)]="roomType"
+      [(ngModel)]="index"
+      name="roomTypeModel"
       #roomTypeModel="ngModel"
-      (change)="onChangeSelect()"
+      (change)="onChangeSelect($event)"
     >
-      <option *ngFor="let room of roomTypes" [value]="room">{{ room }}</option>
+      <option *ngFor="let room of roomTypes; let i=index" [value]="i">{{ room }}</option>
     </select>
   </div>
 
-  <!-- Square Room -->
-  <form (ngSubmit)="onSubmit()" #squareForm="ngForm" [hidden]="index !== 0">
+  <!-- Square Room                                                    v convert index to number -->
+  <form (ngSubmit)="onSubmit()" #squareForm="ngForm" [hidden]="(index *1) !== 0">
     <div class="form-group">
       <label for="length">Length in meter</label>
       <input
@@ -59,8 +59,8 @@
     </button>
   </form>
 
-  <!-- Round Room -->
-  <form (ngSubmit)="onSubmit()" #roundForm="ngForm" [hidden]="index !== 1">
+  <!-- Round Room                                                    v convert index to number -->
+  <form (ngSubmit)="onSubmit()" #roundForm="ngForm" [hidden]="(index *1) !== 1">
     <div class="form-group">
       <label for="diameter">Diameter in meter</label>
       <input
@@ -85,8 +85,8 @@
     </button>
   </form>
 
-  <!-- Lshape Room -->
-  <form (ngSubmit)="onSubmit()" #lShapeForm="ngForm" [hidden]="index !== 2">
+  <!-- Lshape Room                                                    v convert index to number -->
+  <form (ngSubmit)="onSubmit()" #lShapeForm="ngForm" [hidden]="(index *1) !== 2">
     <div class="form-group">
       <label for="llength">Long length in meter</label>
       <input

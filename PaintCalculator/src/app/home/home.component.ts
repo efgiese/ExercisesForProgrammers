@@ -8,6 +8,7 @@ import { SquareCeiling, RoundCeiling, Ceiling, LshapeCeiling } from '../shared/c
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title = 'Paint Calculator';
   submitted = false;
   roomTypes = ['Square', 'Round', 'Lshape'];
   roomType = this.roomTypes[0];
@@ -26,23 +27,23 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onChangeSelect() {
-    this.index = this.roomTypes.indexOf(this.roomType);
-    this.resetNumbers();
+  onChangeSelect(event: any) {
+    this.clear();
   }
 
-  resetNumbers() {
-    this.aLenght = null;
-    this.aWidth = null;
-    this.bLenght = null;
-    this.bWidth = null;
-    this.aDiameter = null;
+  clear() {
+    this.aLenght = undefined;
+    this.aWidth = undefined;
+    this.bLenght = undefined;
+    this.bWidth = undefined;
+    this.aDiameter = undefined;
     this.submitted = false;
   }
 
   onSubmit() {
     this.submitted = true;
-    switch (this.index) {
+    // convert index to a number
+    switch (this.index * 1) {
       case 0: {
         this.ceiling = new SquareCeiling(this.aLenght, this.aWidth);
         break;

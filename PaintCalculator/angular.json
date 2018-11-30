@@ -141,5 +141,8 @@
       }
     }
   },
-  "defaultProject": "PaintCalculator"
+  "defaultProject": "PaintCalculator",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

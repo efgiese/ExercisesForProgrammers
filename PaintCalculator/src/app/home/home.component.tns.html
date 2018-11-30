@@ -1,0 +1,133 @@
+<ActionBar title="{{ title }}" class="action-bar"> </ActionBar>
+<!-- Room Type -->
+<StackLayout class="page">
+  <StackLayout class="form">
+    <label class="h4" text="Room Type"></label>
+    <ListPicker
+      [items]="roomTypes"
+      [(ngModel)]="index"
+      (selectedIndexChange)="onChangeSelect($event)"
+      class="p-10 picker"
+    ></ListPicker>
+  </StackLayout>
+
+  <!-- Square Room -->
+  <StackLayout
+    class="form"
+    visibility="{{index === 0 ? 'visible' : 'collapsed'}}"
+  >
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <StackLayout>
+        <label text="Length in meter" class="heading"></label>
+        <TextField
+          Style="padding: 0"
+          [(ngModel)]="aLenght"
+          hint="Enter a Number..."
+          class="input input-border"
+          keyboardType="number"
+        ></TextField>
+      </StackLayout>
+
+      <StackLayout>
+        <label text="Width in meter" class="heading"></label>
+        <TextField
+          [(ngModel)]="aWidth"
+          hint="Enter a Number..."
+          class="input input-border"
+          keyboardType="number"
+        ></TextField>
+      </StackLayout>
+    </StackLayout>
+    <!-- Buttons -->
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <button text="Submit" (tap)="onSubmit()" class="btn btn-primary"></button>
+      <button text="Clear" (tap)="clear()" class="btn btn-primary"></button>
+    </StackLayout>
+  </StackLayout>
+
+  <!-- Round Room -->
+  <StackLayout
+    class="form"
+    visibility="{{index === 1 ? 'visible' : 'collapsed'}}"
+  >
+    <StackLayout>
+      <label text="Diameter in meter" class="heading"></label>
+      <TextField
+        [(ngModel)]="aDiameter"
+        hint="Enter a Number..."
+        class="input input-border"
+        keyboardType="number"
+      ></TextField>
+    </StackLayout>
+    <!-- Buttons -->
+    <StackLayout orientation="horizontal" horizontalAlignment="center">
+      <button text="Submit" (tap)="onSubmit()" class="btn btn-primary"></button>
+      <button text="Clear" (tap)="clear()" class="btn btn-primary"></button>
+    </StackLayout>
+  </StackLayout>
+
+  <!-- Lshape Room -->
+  <StackLayout visibility="{{index === 2 ? 'visible' : 'collapsed'}}">
+    <StackLayout class="form">
+      <StackLayout orientation="horizontal" horizontalAlignment="center">
+        <StackLayout>
+          <label text="Long length in meter" class="heading"></label>
+          <TextField
+            [(ngModel)]="aLenght"
+            hint="Enter a Number..."
+            class="input input-border"
+            keyboardType="number"
+          ></TextField>
+        </StackLayout>
+        <StackLayout>
+          <label text="Long width in meter" class="heading"></label>
+          <TextField
+            [(ngModel)]="aWidth"
+            hint="Enter a Number..."
+            class="input input-border"
+            keyboardType="number"
+          ></TextField>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout orientation="horizontal" horizontalAlignment="center">
+        <StackLayout>
+          <label text="Short length in meter" class="heading"></label>
+          <TextField
+            [(ngModel)]="bLenght"
+            hint="Enter a Number..."
+            class="input input-border"
+            keyboardType="number"
+          ></TextField>
+        </StackLayout>
+        <StackLayout>
+          <label text="Short width in meter" class="heading"></label>
+          <TextField
+            [(ngModel)]="bWidth"
+            hint="Enter a Number..."
+            class="input input-border"
+            keyboardType="number"
+          ></TextField>
+        </StackLayout>
+      </StackLayout>
+      <!-- Buttons -->
+      <StackLayout orientation="horizontal" horizontalAlignment="center">
+        <button
+          text="Submit"
+          (tap)="onSubmit()"
+          class="btn btn-primary"
+        ></button>
+        <button text="Clear" (tap)="clear()" class="btn btn-primary"></button>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+
+  <!-- Result -->
+  <StackLayout *ngIf="submitted">
+    <label
+      text="You will need to purchase {{ liter }} liter of paint to cover {{ squareMeter }} square meter."
+      class="heading"
+      textWrap="true"
+    ></label>
+  </StackLayout>
+</StackLayout>
