@@ -380,6 +380,7 @@ Thumbs.db
 platforms
 hooks
 tags
+src/**/*.js
 **/*.js.map
 **/*.metadata.json
 
@@ -408,4 +409,3 @@ ng-sample/app/**/*.js
 # Webpack configuration files
 webpack.config.js
 tsconfig.esm.json
-
