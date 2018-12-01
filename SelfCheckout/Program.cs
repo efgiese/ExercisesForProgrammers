@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SelfCheckout
 {
-  class CheckoutItems
+  class CheckoutItem
   {
     public float Price { get; set; }
     public int Quantity { get; set; }
@@ -55,7 +55,7 @@ namespace SelfCheckout
         }
         static void Main(string[] args)
         {
-            List<CheckoutItems> items = new List<CheckoutItems>();
+            List<CheckoutItem> items = new List<CheckoutItem>();
             float tax = 5.5f;
             float price = 0f;
             int quantity = 0;
@@ -69,7 +69,7 @@ namespace SelfCheckout
             {
                 price = ReadFloat($"Enter the price of item {index}:", 0, 100);
                 quantity = ReadInt($"Enter the quantity fo the item {index}:", 0, 100);
-                items.Add(new CheckoutItems() { Price = price, Quantity = quantity });
+                items.Add(new CheckoutItem() { Price = price, Quantity = quantity });
                 index++;
                 Console.WriteLine("Add another item? [Y/n]");
                 result = Console.ReadLine();
